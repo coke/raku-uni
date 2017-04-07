@@ -19,11 +19,6 @@ test-run(q:to/EOUT/, 'heart', 'shaped');
     U+1F63B 😻 SMILING CAT FACE WITH HEART-SHAPED EYES [So]
     EOUT
 
-test-run(q:to/EOUT/, '2e', ');
-    U+002E . FULL STOP [Po]
-    EOUT
-
-
 # -s
 test-run(q:to/EOUT/, '-s', '•');
     U+2022 • BULLET [Po]
