@@ -34,16 +34,10 @@ sub search(@criteria, :$w) {
         }
     }
 
-    (0..0x10FFFF).grep(sub {
-        my $names = $^a.chr.uninames.fc;
-        for @strings -> $criteria {
-            return False unless $names.contains($criteria);
-        }
-        for @regexes -> $criteria {
-            return False unless $names ~~ $criteria;
-        }
-        return True
-    }).map({output $_});
+    my $sieve = 0..0x10FFFF;
+    for @strings -> $criteria { $sieve .= grep({uniname($_).fc.contains($criteria)}) };
+    for @regexes -> $criteria { $sieve .= grep({uniname($_).fc ~~ $criteria}) };
+    $sieve.sort.unique.map({output $_});
 }
 
 # -c : interpret as characters
