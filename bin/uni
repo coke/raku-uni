@@ -4,8 +4,8 @@ use v6;
 
 # Given a single character, output hex, char itself, name, and props
 multi output(Str $char) {
-    my $props = '[' ~ $char.uniprops ~ ']';
-    say (("U+" ~ $char.ord.fmt('%06X')), $char, $char.uninames, $props).join(' ');
+    my $props = ' [' ~ $char.uniprops ~ ']';
+    say ($char, "U+" ~ $char.ord.fmt('%06X'), $char.uninames).join(' - ') ~ $props 
 }
 
 multi output(Int $code) {
