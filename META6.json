@@ -1,0 +1,12 @@
+{
+    "perl" : "6.c",
+    "name" : "App::Uni",
+    "version" : "0.9.0",
+    "description" : "command-line utility to find or display Unicode characters",
+    "authors" : [ "Will 'Coke' Coleda" ],
+    "provides" : { },
+    "depends" : [ ],
+    "resources" : [ ],
+    "source-url" : "git://github.com/coke/p6-uni.git"
+}
+
