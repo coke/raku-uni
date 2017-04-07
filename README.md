@@ -43,7 +43,7 @@ The text following -n is used to search (case insensitively) through all the cod
 
 Same as -n, except each parameter must match an entire word.
 
-    $ uni -n cat eyes
+    $ uni -w cat eyes
     U+1F638 😸 GRINNING CAT FACE WITH SMILING EYES [So]
     U+1F63B 😻 SMILING CAT FACE WITH HEART-SHAPED EYES [So]
     U+1F63D 😽 KISSING CAT FACE WITH CLOSED EYES [So]
@@ -57,7 +57,7 @@ Output multiple characters' information at once:
     U+00A2 ¢ CENT SIGN [Sc]
     U+2026 … HORIZONTAL ELLIPSIS [Po]
     
-## -n (Codepoint)
+## -u (Codepoint)
 
 Search by hex codepoint:
 
