@@ -28,17 +28,17 @@ A single character is processed.
     
 ## -n (Name Search)
 
-The text following -n is used to search (case insensitively) through all the codepoints. Note that because we're using Perl 6 case insenstive searches, this works (note the ﬆ ligature). Parameters that start and end with ```/``` are considered regular expressions.
+The text following -n is used to search (case insensitively) through all the codepoints. Parameters that start and end with ```/``` are considered regular expressions.
 
-    $ uni -n modeﬆy
+    $ uni -n modeﬆy # note the ﬆ ligature
     U+4DCE ䷎ HEXAGRAM FOR MODESTY [So]
-    
+
     $ uni -n stroke dotl modifier
-    U+1DA1 ᶡ MODIFIER LETTER SMALL DOTLESS J WITH STROKE [Lm]    
-    
-    $ uni -n /"rev".*"pilcr"/
+    U+1DA1 ᶡ MODIFIER LETTER SMALL DOTLESS J WITH STROKE [Lm]
+
+    $ uni -n /"rev".*"pilcr"/ # note, has to be one shell arg
     U+204B ⁋ REVERSED PILCROW SIGN [Po]
-    
+
 ## -w (Word Search)
 
 Same as -n, except each parameter must match an entire word.
