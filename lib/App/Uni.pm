@@ -35,7 +35,7 @@ sub uni-search(@criteria, :$w) is export {
     }
 
     my $sieve = 0..0x10FFFF;
-    for @strings -> $criteria { $sieve .= grep({uniname($_).fc.contains($criteria)}) };
-    for @regexes -> $criteria { $sieve .= grep({uniname($_).fc ~~ $criteria}) };
+    hyper for @strings -> $criteria { $sieve .= grep({uniname($_).fc.contains($criteria)}) };
+    hyper for @regexes -> $criteria { $sieve .= grep({uniname($_).fc ~~ $criteria}) };
     $sieve.sort.unique.map({say uni-gist $_});
 }
