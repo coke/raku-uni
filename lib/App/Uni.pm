@@ -1,6 +1,4 @@
-use v6;
-
-unit package App::Uni;
+unit class App::Uni:ver<1.0.1>;
 
 # Given a single character, output hex, char itself, name, and props
 multi sub uni-gist(Str $char) is export {
