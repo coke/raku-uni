@@ -7,11 +7,11 @@ uni - command-line utility to find or display Unicode characters
     $ uni ¶
     ¶ - U+0000B6 - PILCROW SIGN [Po]
     
-```uni``` will output information from the Unicode DB in Perl 6; The hex code, the character itself, the characters name, and the properties of the character(s) are output.
+```uni``` will output information from the Unicode DB in Raku; The hex code, the character itself, the characters name, and the properties of the character(s) are output.
 
 This verison of uni is *heavily* inspired by the Perl 5 module of the same name. H/T to RJBS.
 
-Since it's in Perl 6 - you get the latest Unicode DB in the compiler (currently 9) and regexes are Perl 6-style.
+Since it's in Raku - you get the latest Unicode DB in the compiler (currently 12) and regexes are Raku-style.
     
 # MODES
 

@@ -9,7 +9,7 @@
   "name" : "App::Uni",
   "perl" : "6",
   "provides" : {
-    "App::Uni" : "lib/App/Uni.pm"
+    "App::Uni" : "lib/App/Uni.rakumod"
   },
   "resources" : [ ],
   "source-url" : "git://github.com/coke/p6-uni.git",
