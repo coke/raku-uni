@@ -52,7 +52,7 @@ Same as -n, except each parameter must match an entire word.
 
 Output multiple characters' information at once:
 
-    $uni -c £¢…
+    $ uni -c £¢…
     £ - U+0000A3 - POUND SIGN [Sc]
     ¢ - U+0000A2 - CENT SIGN [Sc]
     … - U+002026 - HORIZONTAL ELLIPSIS [Po]
