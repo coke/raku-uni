@@ -4,13 +4,21 @@ use v6;
 
 use App::Uni;
 
-# -c : interpret as characters
-# -u : interpret as hex codepoints
-# -w : search codepoint names, using input as whole words
-# -n : search codepoint names using input
-# -s : interpret as single character
+sub USAGE() {
+    print Q:c:to/EOH/;
+    Usage:
+        {$*PROGRAM-NAME} -c ... # given list of strings, output each char
+        {$*PROGRAM-NAME} -u ... # given list of hex codepoints, output each char
+        {$*PROGRAM-NAME} -n ... # Search codepoint names given list of name fragments
+        {$*PROGRAM-NAME} -w ... # Search codepoint names given list of words
+        {$*PROGRAM-NAME} -s ... # given single character, output one char
+    EOH
+}
 
-sub MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False) {
+# Force user to pass something
+multi MAIN() { USAGE };
+
+multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False) {
     if $n or $w {
         uni-search(@input, :$w);
         exit 0;
