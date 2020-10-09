@@ -26,13 +26,13 @@ sub uni-search(@criteria, :$w) is export {
             my $string = $criteria.fc;
             if $w {
                 @regexes.push(/« <$string> »/);
-            } else {
-                @strings.push($string);
             }
+            @strings.push($string);
         }
     }
 
     my $sieve = 0..0x10FFFF;
+    # If we can do a search by string first, do so - faster and trims the list for regexes
     hyper for @strings -> $criteria { $sieve .= grep({uniname($_).fc.contains($criteria)}) };
     hyper for @regexes -> $criteria { $sieve .= grep({uniname($_).fc ~~ $criteria}) };
     $sieve.sort.unique.map({say uni-gist $_});
