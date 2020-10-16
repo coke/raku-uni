@@ -1,11 +1,11 @@
 {
   "authors" : [
-    "Will 'Coke' Coleda"
+    "Will Coleda"
   ],
   "auth": "zef:coke",
   "build-depends" : [ ],
   "depends" : [ ],
-  "description" : "command-line utility to find or display Unicode characters",
+  "description" : "Command-line utility to find or display Unicode characters",
   "license" : "Artistic-2.0",
   "name" : "App::Uni",
   "perl" : "6",
