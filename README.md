@@ -11,7 +11,8 @@ uni - command-line utility to find or display Unicode characters
 
 This verison of uni is *heavily* inspired by the Perl 5 module of the same name. H/T to RJBS.
 
-Since it's in Raku - you get the latest Unicode DB in the compiler (currently 12) and regexes are Raku-style.
+Since it's in Raku - you get the latest Unicode DB in the compiler (15 in the upcoming release)
+and regexes are Raku-style.
     
 # MODES
 
