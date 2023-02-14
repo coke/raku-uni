@@ -1,6 +1,6 @@
 use Test;
 
-plan 8;
+plan 9;
 
 # execute bin/uni, using correct pathing.
 sub test-run($expected, *@args) {
@@ -61,5 +61,10 @@ test-run(q:to/EOUT/, '-c', 'as', '£¢…');
 # -u
 test-run(q:to/EOUT/, '-u', '221E', '00A7');
     ∞ - U+00221E - INFINITY [Sm]
+    § - U+0000A7 - SECTION SIGN [Po]
+    EOUT
+
+test-run(q:to/EOUT/, '-u', 'invalid', '00A7');
+    Invalid codepoint: invalid
     § - U+0000A7 - SECTION SIGN [Po]
     EOUT

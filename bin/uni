@@ -29,6 +29,11 @@ multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False) {
     }
     if $u {
         for @input -> $code {
+            my $codepoint = $code.parse-base(16);
+            CATCH {
+                say "Invalid codepoint: $code";
+                next;
+            }
             say uni-gist($code.parse-base(16));
         }
         exit 0;
