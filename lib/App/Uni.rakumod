@@ -22,6 +22,9 @@ sub uni-search(@criteria, :$w) is export {
             } else {
                 @regexes.push(/<$re>/);
             }
+            if $criteria ~~ / '"' $<word>=[ \w*] '"' / {
+                @strings.push(~$<word>.fc);
+            }
         } else {
             my $string = $criteria.fc;
             if $w {

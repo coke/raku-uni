@@ -1,6 +1,6 @@
 use Test;
 
-plan 9;
+plan 10;
 
 # execute bin/uni, using correct pathing.
 sub test-run($expected, *@args) {
@@ -53,11 +53,9 @@ if $version >= v15 {
 }
 test-run($output, '-n', 'stroke', 'dotl', 'modifier');
 
-# too slow yet
-#test-run(q:to/EOUT/, '-n', '/"rev".*"pilcr"/');
-    #⁋ - U+00204B - REVERSED PILCROW SIGN [Po]
-    #EOUT
-#
+test-run(q:to/EOUT/, '-n', '/"rev".*"pilcr"/');
+    ⁋ - U+00204B - REVERSED PILCROW SIGN [Po]
+    EOUT
 
 # -w
 test-run(q:to/EOUT/, '-w', 'cat', 'eyes');
