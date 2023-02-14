@@ -31,9 +31,27 @@ test-run(q:to/EOUT/, '-n', 'modeﬆy');
     ䷎ - U+004DCE - HEXAGRAM FOR MODESTY [So]
     EOUT
 
-test-run(q:to/EOUT/, '-n', 'stroke', 'dotl', 'modifier');
-    ᶡ - U+001DA1 - MODIFIER LETTER SMALL DOTLESS J WITH STROKE [Lm]
-    EOUT
+my $class = ::("Unicode");
+my $version;
+if $class ~~ Failure {
+    $version = v0;
+} else {
+    $version = $class.version;
+}
+
+my $output;
+if $version >= v15 {
+    $output = q:to/EOUT/;
+        ᶡ - U+001DA1 - MODIFIER LETTER SMALL DOTLESS J WITH STROKE [Lm]
+        𐞘 - U+010798 - MODIFIER LETTER SMALL DOTLESS J WITH STROKE AND HOOK [Lm]
+        EOUT
+} else {
+    # This version of raku predates Unicode version, and therefore predates v15
+    $output = q:to/EOUT/;
+        ᶡ - U+001DA1 - MODIFIER LETTER SMALL DOTLESS J WITH STROKE [Lm]
+        EOUT
+}
+test-run($output, '-n', 'stroke', 'dotl', 'modifier');
 
 # too slow yet
 #test-run(q:to/EOUT/, '-n', '/"rev".*"pilcr"/');
