@@ -12,19 +12,24 @@ sub USAGE() {
         {$*PROGRAM-NAME} -n ... # Search codepoint names given list of name fragments
         {$*PROGRAM-NAME} -w ... # Search codepoint names given list of words
         {$*PROGRAM-NAME} -s ... # given single character, output one char
+        {$*PROGRAM-NAME} -v ... # given single character, output one char and properties
     EOH
 }
 
 # Force user to pass something
 multi MAIN() { USAGE };
 
-multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False) {
+multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False, :$v=False) {
     if $n or $w {
         uni-search(@input, :$w);
         exit 0;
     }
     if $s {
         say uni-gist(@input[0]);
+        exit 0;
+    }
+    if $v {
+        say uni-gist(@input[0], :verbose);
         exit 0;
     }
     if $u {

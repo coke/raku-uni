@@ -1,9 +1,27 @@
 unit class App::Uni:ver<1.0.1>;
 
 # Given a single character, output hex, char itself, name, and props
-multi sub uni-gist(Str $char) is export {
+multi sub uni-gist(Str $char, :$verbose=False) is export {
     my $props = ' [' ~ $char.uniprops ~ ']';
-    ($char, "U+" ~ $char.ord.fmt('%06X'), $char.uninames).join(' - ') ~ $props
+    my $result = ($char, "U+" ~ $char.ord.fmt('%06X'), $char.uninames).join(' - ') ~ $props;
+    if $verbose {
+        my @props = [
+            'Script' => 'Unicode Script',
+            'Block' => 'Unicode Block',
+            'Age' => 'Added in Unicode',
+            'white_space' => 'White Space',
+            'East_Asian_Width' => 'Width'
+        ];
+
+        my $max-width = @props.sort(-*.value.chars)[0].value.chars;
+
+        for @props -> $property {
+            $result ~= "\n    {$property.value}:";
+            $result ~= ' ' x 1 + $max-width - $property.value.chars;
+            $result ~= $char.uniprops: $property.key;
+        }
+    }
+    $result;
 }
 
 multi sub uni-gist(Int $code) is export {

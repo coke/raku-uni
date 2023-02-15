@@ -26,7 +26,19 @@ A single character is processed.
 
     $ uni -s •
     • - U+002022 - BULLET [Po]
-    
+  
+## -v (Verbose, Single Character)
+
+Identical to the `-s` variant, except that additional informationa about the codepoint is also displayed
+ 
+    $ uni -v 🚮
+    🚮 - U+01F6AE - PUT LITTER IN ITS PLACE SYMBOL [So]
+        Unicode Script:   Common
+        Unicode Block:    Transport and Map Symbols
+        Added in Unicode: 6.0
+        White Space:      False
+        Width:            W
+ 
 ## -n (Name Search)
 
 The text following -n is used to search (case insensitively) through all the codepoints. Parameters that start and end with ```/``` are considered regular expressions.

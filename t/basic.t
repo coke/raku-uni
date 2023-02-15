@@ -1,6 +1,6 @@
 use Test;
 
-plan 10;
+plan 11;
 
 # execute bin/uni, using correct pathing.
 sub test-run($expected, *@args) {
@@ -84,3 +84,13 @@ test-run(q:to/EOUT/, '-u', 'invalid', '00A7');
     Invalid codepoint: invalid
     § - U+0000A7 - SECTION SIGN [Po]
     EOUT
+
+test-run(q:to/EOUT/, '-v', '🚮');
+    🚮 - U+01F6AE - PUT LITTER IN ITS PLACE SYMBOL [So]
+        Unicode Script:   Common
+        Unicode Block:    Transport and Map Symbols
+        Added in Unicode: 6.0
+        White Space:      False
+        Width:            W
+    EOUT
+
