@@ -2,6 +2,7 @@
   "authors" : [
     "Will 'Coke' Coleda"
   ],
+  "auth": "zef:coke",
   "build-depends" : [ ],
   "depends" : [ ],
   "description" : "command-line utility to find or display Unicode characters",
