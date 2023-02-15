@@ -33,6 +33,7 @@ Identical to the `-s` variant, except that additional information about the code
 
     $ uni -v 🚮
     🚮 - U+01F6AE - PUT LITTER IN ITS PLACE SYMBOL [So]
+        Properties:       Symbol, other
         Unicode Script:   Common
         Unicode Block:    Transport and Map Symbols
         Added in Unicode: 6.0
