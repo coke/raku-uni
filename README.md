@@ -29,7 +29,7 @@ A single character is processed.
 
 ## -v (Verbose, Single Character)
 
-Identical to the `-s` variant, except that additional informationa about the codepoint is also displayed
+Identical to the `-s` variant, except that additional information about the codepoint is also displayed.
 
     $ uni -v 🚮
     🚮 - U+01F6AE - PUT LITTER IN ITS PLACE SYMBOL [So]
