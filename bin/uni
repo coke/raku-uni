@@ -5,14 +5,15 @@ use v6;
 use App::Uni;
 
 sub USAGE() {
+    my $program = $*PROGRAM.basename;
     print Q:c:to/EOH/;
     Usage:
-        {$*PROGRAM-NAME} -c ... # given list of strings, output each char
-        {$*PROGRAM-NAME} -u ... # given list of hex codepoints, output each char
-        {$*PROGRAM-NAME} -n ... # Search codepoint names given list of name fragments
-        {$*PROGRAM-NAME} -w ... # Search codepoint names given list of words
-        {$*PROGRAM-NAME} -s ... # given single character, output one char
-        {$*PROGRAM-NAME} -v ... # given single character, output one char and properties
+        {$program} -c ... # given list of strings, output each char
+        {$program} -u ... # given list of hex codepoints, output each char
+        {$program} -n ... # Search codepoint names given list of name fragments
+        {$program} -w ... # Search codepoint names given list of words
+        {$program} -s ... # given single character, output one char
+        {$program} -v ... # given single character, output one char and properties
     EOH
 }
 
