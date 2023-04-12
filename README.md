@@ -79,6 +79,14 @@ Search by hex codepoint:
     ∞ - U+00221E - INFINITY [Sm]
     § - U+0000A7 - SECTION SIGN [Po]
 
+## -b (Bunny)
+
+Given a character, generate a bunny holding the character:
+
+    # uni -b 221E
+
+TODO
+
 # ACKNOWLEDGEMENTS
 
 This is a re-implementation of the Perl 5 module of the same name, by RJBS: Check out his module for the continued history.

@@ -1,6 +1,6 @@
 use Test;
 
-plan 11;
+plan 12;
 
 # execute bin/uni, using correct pathing.
 sub test-run($expected, *@args) {
@@ -95,3 +95,11 @@ test-run(q:to/EOUT/, '-v', '🚮');
         Width:            W
     EOUT
 
+# -b
+test-run(q:to/EOUT/, '-b', '🐇');
+    (\_/)
+    (•_•)
+    / > 🐇
+
+    🐇 - U+01F407 - RABBIT [So]
+    EOUT

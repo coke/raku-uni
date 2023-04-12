@@ -14,13 +14,14 @@ sub USAGE() {
         {$program} -w ... # Search codepoint names given list of words
         {$program} -s ... # given single character, output one char
         {$program} -v ... # given single character, output one char and properties
+        {$program} -b ... # given single character, output bunny meme
     EOH
 }
 
 # Force user to pass something
 multi MAIN() { USAGE };
 
-multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False, :$v=False) {
+multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False, :$v=False, :$b=False) {
     if $n or $w {
         uni-search(@input, :$w);
         exit 0;
@@ -31,6 +32,10 @@ multi MAIN(*@input, :$c=False, :$u=False, :$w=False, :$s=False, :$n=False, :$v=F
     }
     if $v {
         say uni-gist(@input[0], :verbose);
+        exit 0;
+    }
+    if $b {
+        say uni-bunny(@input[0]);
         exit 0;
     }
     if $u {

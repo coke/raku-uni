@@ -36,6 +36,21 @@ multi sub uni-gist(Int $code) is export {
     uni-gist($code.chr);
 }
 
+# Given a single character, output bunny meme
+sub uni-bunny(Str $char) is export {
+    my $bunny = q:to/EOB/;
+
+(\_/)
+(•_•)
+/ > 
+
+EOB
+    $bunny .= trim;
+    $bunny ~= ' ' ~ $char;
+
+    $bunny ~ "\n\n" ~ uni-gist($char);
+}
+
 # Search through all codepoint names, optionally as whole word
 sub uni-search(@criteria, :$w) is export {
     my @strings;
