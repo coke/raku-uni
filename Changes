@@ -1,6 +1,8 @@
 Revision history for App-Uni
 
 {{$NEXT}}
+
+1.0.4  2023-04-13T09:56:46-04:00
     - Add -b for bunny meme
     - switch to fez
 
