@@ -16,7 +16,7 @@
   },
   "resources": [
   ],
-  "source-url": "git://github.com/coke/p6-uni.git",
+  "source-url": "git://github.com/coke/raku-uni.git",
   "tags": [
   ],
   "test-depends": [
